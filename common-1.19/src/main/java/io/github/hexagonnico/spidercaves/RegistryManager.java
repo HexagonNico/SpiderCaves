@@ -1,5 +1,7 @@
 package io.github.hexagonnico.spidercaves;
 
+import io.github.hexagonnico.spidercaves.items.SpiderArmorItem;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 
 import java.util.ServiceLoader;
@@ -19,6 +21,11 @@ public final class RegistryManager {
     private static final ModRegistry REGISTRY = ServiceLoader.load(ModRegistry.class).findFirst().orElseThrow();
 
     public static final Supplier<Item> TEST_ITEM = REGISTRY.registerItem("test_item");
+
+    public static final Supplier<ArmorItem> SPIDER_HELMET = REGISTRY.registerItem("spider_helmet", () -> new SpiderArmorItem(ArmorItem.Type.HELMET));
+    public static final Supplier<ArmorItem> SPIDER_CHESTPLATE = REGISTRY.registerItem("spider_chestplate", () -> new SpiderArmorItem(ArmorItem.Type.CHESTPLATE));
+    public static final Supplier<ArmorItem> SPIDER_LEGGINGS = REGISTRY.registerItem("spider_leggings", () -> new SpiderArmorItem(ArmorItem.Type.LEGGINGS));
+    public static final Supplier<ArmorItem> SPIDER_BOOTS = REGISTRY.registerItem("spider_boots", () -> new SpiderArmorItem(ArmorItem.Type.BOOTS));
 
     /**
      * Finalizes the registration process by registering all the objects added to the registry.
