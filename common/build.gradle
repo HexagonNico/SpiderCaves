@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+base {
+    archivesName = "spidercaves-common"
+}
+
+java {
+    toolchain {
+        JavaLanguageVersion.of(17)
+    }
+}

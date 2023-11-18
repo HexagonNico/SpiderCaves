@@ -40,6 +40,8 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 
 dependencies {
     minecraft "net.minecraftforge:forge:1.19.4-45.2.0"
+    compileOnly project(":common-1.19")
+    compileOnly project(":common")
 //    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
@@ -48,6 +50,16 @@ dependencies {
 //    config "mixin.spidercaves.json"
 //    config "mixin.spidercaves.forge.json"
 //}
+
+tasks.withType(JavaCompile).configureEach {
+    source project(":common").sourceSets.main.allSource
+    source project(":common-1.19").sourceSets.main.allSource
+}
+
+processResources {
+    from project(":common").sourceSets.main.resources
+    from project(":common-1.19").sourceSets.main.resources
+}
 
 jar {
     manifest {
