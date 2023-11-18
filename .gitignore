@@ -1,0 +1,36 @@
+# Java
+*.class
+hs_err_pid*
+
+# Eclipse
+eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# Intellij Idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# VS Code
+.vscode/
+
+# Gradle
+build
+.gradle
+
+# Run environment
+run
+
+# Forge
+forge*changelog.txt
+
+# Directories
+.DS_Store
+.directory

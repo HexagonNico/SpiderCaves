@@ -1,0 +1,66 @@
+plugins {
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+//    id 'org.spongepowered.mixin' version "0.7.+"
+}
+
+base {
+    version = '1.0-forge'
+    group = 'io.github.hexagonnico.spidercaves'
+    archivesName = "spidercaves-1.19"
+}
+
+java {
+    toolchain {
+        JavaLanguageVersion.of(17)
+    }
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.19.4'
+
+    runs {
+        client {
+            workingDirectory this.file('../run')
+            ideaModule "${rootProject.name}.${project.name}.main"
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'spider_caves'
+            mods {
+                spidercaves {
+                    source this.sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets.main.resources.srcDir 'src/generated/resources'
+
+dependencies {
+    minecraft "net.minecraftforge:forge:1.19.4-45.2.0"
+//    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+//mixin {
+//    add sourceSets.main, "mixin.spidercaves.refmap.json"
+//    config "mixin.spidercaves.json"
+//    config "mixin.spidercaves.forge.json"
+//}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title": 'spider_caves',
+                "Specification-Vendor": 'HexagonNico',
+                "Specification-Version": project.version,
+                "Implementation-Title": project.name,
+                "Implementation-Version": project.jar.archiveVersion,
+                "Implementation-Vendor": 'HexagonNico',
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+jar.finalizedBy('reobfJar')
