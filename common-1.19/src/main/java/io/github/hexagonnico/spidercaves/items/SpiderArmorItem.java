@@ -12,7 +12,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Spider armor item. Class needed to override {@link SpiderArmorItem#appendHoverText(ItemStack, Level, List, TooltipFlag)}.
+ * Spider armor item.
+ * Class needed to override {@link SpiderArmorItem#appendHoverText(ItemStack, Level, List, TooltipFlag)}.
  *
  * @author Nico
  */

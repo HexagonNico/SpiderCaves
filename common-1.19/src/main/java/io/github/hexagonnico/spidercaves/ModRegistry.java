@@ -26,16 +26,6 @@ import java.util.function.Supplier;
 public interface ModRegistry {
 
     /**
-     * Registers a {@link Block}.
-     *
-     * @param name The block's registry name
-     * @param block A supplier returning the block to register
-     * @return A supplier returning the registered block
-     * @param <T> The block's class
-     */
-    <T extends Block> Supplier<T> registerBlock(String name, Supplier<T> block);
-
-    /**
      * Registers an {@link Item}.
      *
      * @param name The item's registry name
@@ -65,6 +55,16 @@ public interface ModRegistry {
     default Supplier<Item> registerItem(String name) {
         return this.registerItem(name, new Item.Properties());
     }
+
+    /**
+     * Registers a {@link Block}.
+     *
+     * @param name The block's registry name
+     * @param block A supplier returning the block to register
+     * @return A supplier returning the registered block
+     * @param <T> The block's class
+     */
+    <T extends Block> Supplier<T> registerBlock(String name, Supplier<T> block);
 
     /**
      * Registers a {@link BlockItem} from the given block.

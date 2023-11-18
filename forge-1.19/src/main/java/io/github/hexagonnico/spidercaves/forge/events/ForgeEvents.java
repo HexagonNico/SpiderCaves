@@ -20,7 +20,8 @@ public class ForgeEvents {
                 target.getItemBySlot(EquipmentSlot.CHEST).is(RegistryManager.SPIDER_CHESTPLATE.get()) &&
                 target.getItemBySlot(EquipmentSlot.LEGS).is(RegistryManager.SPIDER_LEGGINGS.get()) &&
                 target.getItemBySlot(EquipmentSlot.FEET).is(RegistryManager.SPIDER_BOOTS.get()) &&
-                event.getSource().getDirectEntity() instanceof LivingEntity attacker) {
+                event.getSource().getDirectEntity() instanceof LivingEntity attacker &&
+                attacker.getRandom().nextFloat() <= 0.3) {
             attacker.addEffect(new MobEffectInstance(MobEffects.POISON, 200), target);
         }
     }

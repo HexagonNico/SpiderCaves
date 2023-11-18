@@ -1,5 +1,6 @@
 package io.github.hexagonnico.spidercaves.items;
 
+import io.github.hexagonnico.spidercaves.RegistryManager;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
@@ -17,7 +18,7 @@ import java.util.function.Supplier;
 public class ModArmorMaterial implements ArmorMaterial {
 
     /** Spider armor material */
-    public static final ModArmorMaterial SPIDER_ARMOR = new ModArmorMaterial("spider", new StatsMap(15 * 13, 15 * 16, 15 * 15, 15 * 11), new StatsMap(2, 5, 4, 1), 17, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0f, 0.0f, () -> Ingredient.EMPTY);
+    public static final ModArmorMaterial SPIDER_ARMOR = new ModArmorMaterial("spider", new StatsMap(195, 240, 225, 165), new StatsMap(2, 5, 4, 1), 17, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0f, 0.0f, () -> Ingredient.of(RegistryManager.SPIDER_FANG.get()));
 
     /** Set name */
     private final String name;
