@@ -22,11 +22,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class SheetsMixin {
 
     /** Chest texture location */
-    private static final Material CHEST_MATERIAL = new Material(Sheets.CHEST_SHEET, new ResourceLocation(RegistryManager.MOD_ID, "chest/web_covered"));
+    private static final Material CHEST_MATERIAL = new Material(Sheets.CHEST_SHEET, new ResourceLocation(RegistryManager.MOD_ID, "entity/chest/web_covered"));
     /** Left chest texture location */
-    private static final Material CHEST_MATERIAL_LEFT = new Material(Sheets.CHEST_SHEET, new ResourceLocation(RegistryManager.MOD_ID, "chest/web_covered_left"));
+    private static final Material CHEST_MATERIAL_LEFT = new Material(Sheets.CHEST_SHEET, new ResourceLocation(RegistryManager.MOD_ID, "entity/chest/web_covered_left"));
     /** Right chest texture location */
-    private static final Material CHEST_MATERIAL_RIGHT = new Material(Sheets.CHEST_SHEET, new ResourceLocation(RegistryManager.MOD_ID, "chest/web_covered_right"));
+    private static final Material CHEST_MATERIAL_RIGHT = new Material(Sheets.CHEST_SHEET, new ResourceLocation(RegistryManager.MOD_ID, "entity/chest/web_covered_right"));
 
     /**
      * Returns {@link SheetsMixin#CHEST_MATERIAL} if the given chest is a {@link RegistryManager#WEB_COVERED_CHEST}.

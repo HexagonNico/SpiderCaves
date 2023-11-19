@@ -119,6 +119,8 @@ public interface ModRegistry {
         return this.registerBlockVariant(name, base, true);
     }
 
+    // TODO: Allow multiple blocks for block entities
+
     /**
      * Registers a {@link BlockEntityType}.
      *
