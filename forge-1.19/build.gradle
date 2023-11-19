@@ -2,7 +2,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-//    id 'org.spongepowered.mixin' version "0.7.+"
+    id 'org.spongepowered.mixin' version "0.7.+"
 }
 
 base {
@@ -42,14 +42,14 @@ dependencies {
     minecraft "net.minecraftforge:forge:1.19.4-45.2.0"
     compileOnly project(":common-1.19")
     compileOnly project(":common")
-//    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
-//mixin {
-//    add sourceSets.main, "mixin.spidercaves.refmap.json"
-//    config "mixin.spidercaves.json"
+mixin {
+    add sourceSets.main, "mixin.spidercaves.refmap.json"
+    config "mixin.spidercaves.json"
 //    config "mixin.spidercaves.forge.json"
-//}
+}
 
 tasks.withType(JavaCompile).configureEach {
     source project(":common").sourceSets.main.allSource

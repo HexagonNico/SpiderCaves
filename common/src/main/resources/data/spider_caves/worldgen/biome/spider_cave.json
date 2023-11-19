@@ -1,7 +1,9 @@
 {
   "carvers": {
     "air": [
-      "spider_caves:cave"
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
     ]
   },
   "downfall": 0.2,
