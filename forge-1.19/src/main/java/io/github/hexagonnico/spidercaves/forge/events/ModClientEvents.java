@@ -2,6 +2,7 @@ package io.github.hexagonnico.spidercaves.forge.events;
 
 import io.github.hexagonnico.spidercaves.RegistryManager;
 import net.minecraft.client.renderer.blockentity.ChestRenderer;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -24,7 +25,16 @@ public class ModClientEvents {
      */
     @SubscribeEvent
     public static void creativeTabEvent(CreativeModeTabEvent.BuildContents event) {
-        // TODO: Creative tab items
+        if(event.getTab().equals(CreativeModeTabs.COMBAT)) {
+            event.accept(RegistryManager.SPIDER_HELMET);
+            event.accept(RegistryManager.SPIDER_CHESTPLATE);
+            event.accept(RegistryManager.SPIDER_LEGGINGS);
+            event.accept(RegistryManager.SPIDER_BOOTS);
+        } else if(event.getTab().equals(CreativeModeTabs.INGREDIENTS)) {
+            event.accept(RegistryManager.SPIDER_FANG);
+        } else if(event.getTab().equals(CreativeModeTabs.FUNCTIONAL_BLOCKS)) {
+            event.accept(RegistryManager.WEB_COVERED_CHEST);
+        }
     }
 
     /**

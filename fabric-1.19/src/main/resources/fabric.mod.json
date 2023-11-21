@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "spider_caves",
+  "version": "${version}",
+  "name": "Spider Caves",
+  "description": "Adds a spider cave biome and a spider armor",
+  "authors": [
+    "HexagonNico"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/spider-caves",
+    "sources": "https://github.com/HexagonNico/SpiderCaves"
+  },
+  "license": "CC BY-NC-ND 4.0",
+  "icon": "icon.png",
+  "entrypoints": {
+    "main": [
+      "io.github.hexagonnico.spidercaves.fabric.FabricInitializer"
+    ],
+    "client": [
+      "io.github.hexagonnico.spidercaves.fabric.FabricClientInitializer"
+    ]
+  },
+  "mixins": [
+    "mixin.spidercaves.json",
+    "mixin.spidercaves.fabric.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.23",
+    "minecraft": "~1.19.4",
+    "java": ">=17"
+  }
+}
