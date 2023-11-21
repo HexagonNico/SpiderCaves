@@ -134,36 +134,6 @@ public interface ModRegistry {
     <T extends BlockEntity> Supplier<BlockEntityType<? extends T>> registerBlockEntity(String name, Supplier<? extends Block> block, BiFunction<BlockPos, BlockState, T> blockEntity);
 
     /**
-     * Registers a {@link BlockItem} for a block entity.
-     * The default implementation just invokes {@link ModRegistry#registerBlockItem(String, Supplier)}, but different mod loaders may require to change this to provide an item renderer.
-     *
-     * @param name The item's registry name
-     * @param block The block on which this item is based
-     * @param blockEntity The block entity on which this item is based
-     * @return A supplier returning the registered item
-     */
-    default Supplier<BlockItem> registerBlockEntityItem(String name, Supplier<? extends Block> block, BiFunction<BlockPos, BlockState, ? extends BlockEntity> blockEntity) {
-        return this.registerBlockItem(name, block);
-    }
-
-    /**
-     * Registers a {@link BlockEntityType} and a {@link BlockItem}.
-     * Combines {@link ModRegistry#registerBlockEntity(String, Supplier, BiFunction)} and {@link ModRegistry#registerBlockEntityItem(String, Supplier, BiFunction)}.
-     * Note that this method should not be used if the block has been registered with {@link ModRegistry#registerBlockAndItem(String, Supplier)}.
-     *
-     * @param name The block entity and the item's registry name
-     * @param block The block on which the block entity and the item are based
-     * @param blockEntity The block entity's constructor
-     * @return A supplier returning the registered block entity
-     * @param <T> The block entity's class
-     */
-    default <T extends BlockEntity> Supplier<BlockEntityType<? extends T>> registerBlockEntityAndItem(String name, Supplier<? extends Block> block, BiFunction<BlockPos, BlockState, T> blockEntity) {
-        Supplier<BlockEntityType<? extends T>> blockEntityType = this.registerBlockEntity(name, block, blockEntity);
-        this.registerBlockEntityItem(name, block, blockEntity);
-        return blockEntityType;
-    }
-
-    /**
      * Registers an {@link EntityType}.
      *
      * @param name The entity's registry name
@@ -187,6 +157,15 @@ public interface ModRegistry {
         return this.registerItem(name, () -> new SpawnEggItem(entity.get(), primaryColor, secondaryColor, new Item.Properties()));
     }
 
+    /**
+     * Registers a {@link Feature} type.
+     * Features can be used in the {@code type} parameter in {@code configured_feature} json files.
+     *
+     * @param name Name of the feature
+     * @param feature Supplier returning the feature to register
+     * @return The registered feature
+     * @param <T> The feature's class
+     */
     <T extends Feature<?>> Supplier<T> registerFeature(String name, Supplier<T> feature);
 
     /**
