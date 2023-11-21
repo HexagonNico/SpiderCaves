@@ -3,6 +3,7 @@ package io.github.hexagonnico.spidercaves;
 import io.github.hexagonnico.spidercaves.blocks.ModChestBlock;
 import io.github.hexagonnico.spidercaves.blocks.ModChestBlockEntity;
 import io.github.hexagonnico.spidercaves.items.SpiderArmorItem;
+import io.github.hexagonnico.spidercaves.worldgen.SimpleChestFeature;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
@@ -35,6 +36,8 @@ public final class RegistryManager {
 
     public static final Supplier<ModChestBlock> WEB_COVERED_CHEST = REGISTRY.registerBlockAndItem("web_covered_chest", () -> new ModChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST)));
     public static final Supplier<BlockEntityType<? extends ChestBlockEntity>> WEB_COVERED_CHEST_ENTITY = REGISTRY.registerBlockEntity("web_covered_chest", WEB_COVERED_CHEST, ModChestBlockEntity::new);
+
+    public static final Supplier<SimpleChestFeature> SIMPLE_CHEST_FEATURE = REGISTRY.registerFeature("simple_chest", SimpleChestFeature::new);
 
     /**
      * Finalizes the registration process by registering all the objects added to the registry.

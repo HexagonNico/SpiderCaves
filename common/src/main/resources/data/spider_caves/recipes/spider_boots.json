@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:leather_boots"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "F": {
+      "item": "spider_caves:spider_fang"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "F#F"
+  ],
+  "result": {
+    "item": "spider_caves:spider_boots"
+  },
+  "show_notification": true
+}

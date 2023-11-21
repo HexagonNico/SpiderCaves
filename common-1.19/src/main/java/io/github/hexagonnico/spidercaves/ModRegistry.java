@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.Feature;
 
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
@@ -185,6 +186,8 @@ public interface ModRegistry {
     default <T extends Mob> Supplier<SpawnEggItem> registerSpawnEgg(String name, Supplier<EntityType<T>> entity, int primaryColor, int secondaryColor) {
         return this.registerItem(name, () -> new SpawnEggItem(entity.get(), primaryColor, secondaryColor, new Item.Properties()));
     }
+
+    <T extends Feature<?>> Supplier<T> registerFeature(String name, Supplier<T> feature);
 
     /**
      * Finalizes the registration process by registering all the objects added to the registry.

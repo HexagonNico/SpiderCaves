@@ -64,10 +64,12 @@
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
       "spider_caves:ore_cobbled_deepslate",
-      "spider_caves:ore_blackstone"
+      "spider_caves:ore_cobblestone"
     ],
     [],
-    [],
+    [
+      "spider_caves:web_covered_chest"
+    ],
     [
       "minecraft:glow_lichen",
       "minecraft:brown_mushroom_normal",

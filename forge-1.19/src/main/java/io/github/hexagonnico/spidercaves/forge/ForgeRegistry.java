@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -36,6 +37,8 @@ public class ForgeRegistry implements ModRegistry {
     private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, RegistryManager.MOD_ID);
     /** Entities deferred register */
     private static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, RegistryManager.MOD_ID);
+
+    private static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, RegistryManager.MOD_ID);
 
     @Override
     public <T extends Block> Supplier<T> registerBlock(String name, Supplier<T> block) {
@@ -72,11 +75,17 @@ public class ForgeRegistry implements ModRegistry {
     }
 
     @Override
+    public <T extends Feature<?>> Supplier<T> registerFeature(String name, Supplier<T> feature) {
+        return FEATURES.register(name, feature);
+    }
+
+    @Override
     public void register() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         BLOCKS.register(eventBus);
         BLOCK_ENTITIES.register(eventBus);
         ITEMS.register(eventBus);
         ENTITIES.register(eventBus);
+        FEATURES.register(eventBus);
     }
 }
