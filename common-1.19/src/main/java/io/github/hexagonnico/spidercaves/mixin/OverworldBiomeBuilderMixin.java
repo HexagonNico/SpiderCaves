@@ -25,7 +25,7 @@ import java.util.function.Consumer;
 @Mixin(OverworldBiomeBuilder.class)
 public class OverworldBiomeBuilderMixin {
 
-    private static final float TEMPERATURE_MIN = -1.0f;
+    private static final float TEMPERATURE_MIN = -0.9f;
     private static final float TEMPERATURE_MAX = 0.3f;
     private static final float HUMIDITY_MIN = -1.0f;
     private static final float HUMIDITY_MAX = -0.4f;
