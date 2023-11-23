@@ -21,9 +21,11 @@ public class ModChestBlock extends ChestBlock {
      *
      * @param properties Block properties
      */
+    @SuppressWarnings({"Convert2MethodRef", "FunctionalExpressionCanBeFolded"})
     public ModChestBlock(Properties properties) {
         // TODO: Replace with generic MOD_CHEST_BLOCK_ENTITY
-        super(properties, RegistryManager.WEB_COVERED_CHEST_ENTITY);
+        // Qualifier cannot be used because of circular dependency (sigh...)
+        super(properties, () -> RegistryManager.WEB_COVERED_CHEST_ENTITY.get());
     }
 
     @Override
