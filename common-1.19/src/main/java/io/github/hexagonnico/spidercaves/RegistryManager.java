@@ -2,10 +2,14 @@ package io.github.hexagonnico.spidercaves;
 
 import io.github.hexagonnico.spidercaves.blocks.ModChestBlock;
 import io.github.hexagonnico.spidercaves.blocks.ModChestBlockEntity;
+import io.github.hexagonnico.spidercaves.entities.BlackRecluse;
 import io.github.hexagonnico.spidercaves.items.SpiderArmorItem;
 import io.github.hexagonnico.spidercaves.worldgen.SimpleChestFeature;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
@@ -38,6 +42,9 @@ public final class RegistryManager {
     public static final Supplier<BlockEntityType<? extends ChestBlockEntity>> WEB_COVERED_CHEST_ENTITY = REGISTRY.registerBlockEntity("web_covered_chest", WEB_COVERED_CHEST, ModChestBlockEntity::new);
 
     public static final Supplier<SimpleChestFeature> SIMPLE_CHEST_FEATURE = REGISTRY.registerFeature("simple_chest", SimpleChestFeature::new);
+
+    public static final Supplier<EntityType<BlackRecluse>> BLACK_RECLUSE = REGISTRY.registerEntity("black_recluse", EntityType.Builder.of(BlackRecluse::new, MobCategory.MONSTER).sized(1.4f, 0.9f).clientTrackingRange(8));
+    public static final Supplier<SpawnEggItem> BLACK_RECLUSE_SPAWN_EGG = REGISTRY.registerSpawnEgg("black_recluse_spawn_egg", BLACK_RECLUSE, 0x000000, 0xFF0000);
 
     /**
      * Finalizes the registration process by registering all the objects added to the registry.

@@ -2,7 +2,9 @@ package io.github.hexagonnico.spidercaves.fabric;
 
 import io.github.hexagonnico.spidercaves.ModRegistry;
 import io.github.hexagonnico.spidercaves.RegistryManager;
+import io.github.hexagonnico.spidercaves.entities.BlackRecluse;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -59,6 +61,6 @@ public class FabricRegistry implements ModRegistry {
 
     @Override
     public void register() {
-
+        FabricDefaultAttributeRegistry.register(RegistryManager.BLACK_RECLUSE.get(), BlackRecluse.createAttributes());
     }
 }

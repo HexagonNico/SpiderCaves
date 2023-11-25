@@ -1,6 +1,7 @@
 package io.github.hexagonnico.spidercaves.forge.events;
 
 import io.github.hexagonnico.spidercaves.RegistryManager;
+import io.github.hexagonnico.spidercaves.renderers.BlackRecluseRenderer;
 import net.minecraft.client.renderer.blockentity.ChestRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,6 +35,8 @@ public class ModClientEvents {
             event.accept(RegistryManager.SPIDER_FANG);
         } else if(event.getTab().equals(CreativeModeTabs.FUNCTIONAL_BLOCKS)) {
             event.accept(RegistryManager.WEB_COVERED_CHEST);
+        } else if(event.getTab().equals(CreativeModeTabs.SPAWN_EGGS)) {
+            event.accept(RegistryManager.BLACK_RECLUSE_SPAWN_EGG);
         }
     }
 
@@ -45,5 +48,6 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void registerRenders(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(RegistryManager.WEB_COVERED_CHEST_ENTITY.get(), ChestRenderer::new);
+        event.registerEntityRenderer(RegistryManager.BLACK_RECLUSE.get(), BlackRecluseRenderer::new);
     }
 }

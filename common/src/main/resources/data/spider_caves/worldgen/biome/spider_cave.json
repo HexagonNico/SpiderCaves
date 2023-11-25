@@ -113,6 +113,12 @@
         "maxCount": 2,
         "minCount": 1,
         "weight": 20
+      },
+      {
+        "type": "spider_caves:black_recluse",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
       }
     ],
     "underground_water_creature": [
