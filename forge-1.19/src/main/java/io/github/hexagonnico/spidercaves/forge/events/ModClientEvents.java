@@ -37,6 +37,8 @@ public class ModClientEvents {
             event.accept(RegistryManager.WEB_COVERED_CHEST);
         } else if(event.getTab().equals(CreativeModeTabs.SPAWN_EGGS)) {
             event.accept(RegistryManager.BLACK_RECLUSE_SPAWN_EGG);
+        } else if(event.getTab().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
+            event.accept(RegistryManager.SPIDER_EGG);
         }
     }
 

@@ -39,5 +39,8 @@ public class FabricClientInitializer implements ClientModInitializer {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(listener -> {
             listener.accept(RegistryManager.BLACK_RECLUSE_SPAWN_EGG.get());
         });
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(listener -> {
+            listener.accept(RegistryManager.SPIDER_EGG.get());
+        });
     }
 }
