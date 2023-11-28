@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="CC BY-NC-ND 4.0"
+issueTrackerURL="https://github.com/HexagonNico/SpiderCaves/issues"
+
+[[mods]]
+modId="spider_caves"
+version="${file.jarVersion}"
+displayName="Spider Caves"
+#updateJSONURL="https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/"
+displayURL="https://github.com/HexagonNico/SpiderCaves"
+logoFile="logo.png"
+#credits="Additional credits go here"
+authors="HexagonNico"
+description="Adds a spider cave biome and a spider armor"
+
+[[dependencies.spider_caves]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.spider_caves]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"

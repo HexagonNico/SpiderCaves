@@ -7,6 +7,6 @@
         "Name": "spider_caves:web_covered_chest"
       }
     },
-    "loot_table": "spider_caves:chests/web_covered_chest"
+    "lootTable": "spider_caves:chests/web_covered_chest"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "io.github.hexagonnico.spidercaves.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "mixin.spidercaves.refmap.json",
+  "mixins": [
+    "OverworldBiomeBuilderMixin",
+    "SheetsMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
