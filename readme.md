@@ -18,9 +18,9 @@ deal direct damage to you.
 
 ### Main mod page
 
-Curseforge: https://www.curseforge.com/minecraft/mc-mods/underground-jungle
+Curseforge: https://www.curseforge.com/minecraft/mc-mods/spider-caves
 
-Modrinth: https://modrinth.com/mod/underground-jungle
+Modrinth: https://modrinth.com/mod/spider-caves
 
 ### Additional information
 
