@@ -35,7 +35,7 @@ public class OverworldBiomeBuilderMixin {
     private static final float EROSION_MAX = 1.0f;
     private static final float DEPTH_MIN = 0.2f;
     private static final float DEPTH_MAX = 0.9f;
-    private static final float WEIRDNESS_MIN = 0.6f;
+    private static final float WEIRDNESS_MIN = 0.7f;
     private static final float WEIRDNESS_MAX = 1.0f;
 
     /**
