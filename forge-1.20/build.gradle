@@ -6,7 +6,7 @@ plugins {
 }
 
 base {
-    version = '2.0-forge'
+    version = '2.0.1-forge'
     group = 'io.github.hexagonnico.spidercaves'
     archivesName = "spidercaves-1.20"
 }
