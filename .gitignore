@@ -18,18 +18,15 @@ out
 *.iml
 .idea
 
-# VS Code
-.vscode/
-
 # Gradle
 build
 .gradle
 
-# Run environment
-run
+# VS Code
+.vscode/
 
-# Forge
-forge*changelog.txt
+# Minecraft
+.minecraft/
 
 # Directories
 .DS_Store

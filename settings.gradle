@@ -6,12 +6,16 @@ pluginManagement {
             url = 'https://maven.minecraftforge.net/'
         }
         maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        maven {
             name = 'Sponge Snapshots'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
     }
 }
 
-include('common')
-include('common-1.19', 'forge-1.19', 'fabric-1.19')
-include('common-1.20', 'forge-1.20', 'fabric-1.20')
+rootProject.name = 'SpiderCaves'
+
+include 'common', 'forge', 'fabric'

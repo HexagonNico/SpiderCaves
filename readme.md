@@ -1,5 +1,5 @@
 
-![Spider Caves](common/src/main/resources/logo.png)
+![Spider Caves](forge/src/main/resources/logo.png)
 
 Spider Caves is a mod that adds a spider cave biome and a spider armor.
 
@@ -23,6 +23,8 @@ Curseforge: https://www.curseforge.com/minecraft/mc-mods/spider-caves
 Modrinth: https://modrinth.com/mod/spider-caves
 
 ### Additional information
+
+Versions past 19.x require the [Phantom Library](https://github.com/PhantomLoader/PhantomLoader)
 
 The Fabric version of this mod requires the [Fabric API](https://github.com/FabricMC)
 
