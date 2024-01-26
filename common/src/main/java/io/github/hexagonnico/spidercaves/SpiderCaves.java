@@ -17,8 +17,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.material.Material;
 
 import java.util.function.Supplier;
 
@@ -41,7 +40,7 @@ public final class SpiderCaves {
     public static final Supplier<EntityType<BlackRecluse>> BLACK_RECLUSE = REGISTRY.registerEntity("black_recluse", EntityType.Builder.of(BlackRecluse::new, MobCategory.MONSTER).sized(1.4f, 0.9f).clientTrackingRange(8));
     public static final Supplier<SpawnEggItem> BLACK_RECLUSE_SPAWN_EGG = REGISTRY.registerSpawnEgg("black_recluse_spawn_egg", BLACK_RECLUSE::get, 0x000000, 0xFF0000);
 
-    public static final Supplier<SpiderEggBlock> SPIDER_EGG = REGISTRY.registerBlockAndItem("spider_egg", () -> new SpiderEggBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(0.5f).sound(SoundType.METAL).noOcclusion().noLootTable().forceSolidOn().pushReaction(PushReaction.DESTROY)));
+    public static final Supplier<SpiderEggBlock> SPIDER_EGG = REGISTRY.registerBlockAndItem("spider_egg", () -> new SpiderEggBlock(BlockBehaviour.Properties.of(Material.WOOL).strength(0.5f).sound(SoundType.METAL).noOcclusion().noLootTable()));
 
     public static String modId() {
         return REGISTRY.mod;

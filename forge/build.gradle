@@ -41,8 +41,8 @@ dependencies {
     // Common module dependency
     implementation project(':common')
     // Phantom library dependency
-    implementation fg.deobf("curse.maven:phantom-loader-958545:5050183")
-    annotationProcessor fg.deobf("curse.maven:phantom-loader-958545:5050183")
+    implementation fg.deobf("curse.maven:phantom-loader-958545:5049994")
+    annotationProcessor fg.deobf("curse.maven:phantom-loader-958545:5049994")
     annotationProcessor "io.github.phantomloader:processor-forge:${phantomVersion}"
     // Mixin annotation processor
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
@@ -97,7 +97,6 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
         displayName = modName + ' - ' + modVersion + ' Forge'
         addRequirement 'phantom-loader'
         addGameVersion minecraftVersion
-        addGameVersion '1.20.2'
         addModLoader 'Forge'
     }
 }
@@ -109,7 +108,7 @@ modrinth {
     versionName = modName + ' - ' + modVersion + ' Forge'
     versionType = 'release'
     uploadFile = jar
-    gameVersions = [minecraftVersion, '1.20.2']
+    gameVersions = [minecraftVersion]
     loaders = ['forge']
     changelog = changelogText
     dependencies {

@@ -48,8 +48,8 @@ dependencies {
     // Common module dependency
     implementation project(':common')
     // Phantom library dependency
-    modImplementation "curse.maven:phantom-loader-958545:5050175"
-    annotationProcessor "curse.maven:phantom-loader-958545:5050175"
+    modImplementation "curse.maven:phantom-loader-958545:5049989"
+    annotationProcessor "curse.maven:phantom-loader-958545:5049989"
     annotationProcessor "net.fabricmc:fabric-loader:${fabricVersion}"
     annotationProcessor "io.github.phantomloader:processor-fabric:${phantomVersion}"
     // Optional TerraBlender dependency
@@ -94,7 +94,6 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
         addRequirement 'phantom-loader'
         addModLoader 'Fabric'
         addGameVersion minecraftVersion
-        addGameVersion '1.20.2'
     }
 }
 
@@ -105,7 +104,7 @@ modrinth {
     versionName = modName + ' - ' + modVersion + ' Fabric'
     versionType = 'release'
     uploadFile = remapJar
-    gameVersions = [minecraftVersion, '1.20.2']
+    gameVersions = [minecraftVersion]
     loaders = ['fabric']
     changelog = changelogText
     dependencies {

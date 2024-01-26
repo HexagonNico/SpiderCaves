@@ -27,11 +27,10 @@ public class BlackRecluse extends Spider {
     }
 
     @Override
-    @SuppressWarnings("resource")
     public boolean doHurtTarget(@NotNull Entity target) {
         if(super.doHurtTarget(target)) {
             if(target instanceof LivingEntity livingTarget) {
-                livingTarget.addEffect(new MobEffectInstance(MobEffects.POISON, switch (this.level().getDifficulty()) {
+                livingTarget.addEffect(new MobEffectInstance(MobEffects.POISON, switch (this.getLevel().getDifficulty()) {
                     case PEACEFUL -> 0;
                     case EASY -> 5 * 20;
                     case NORMAL -> 10 * 20;
