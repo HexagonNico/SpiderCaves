@@ -94,6 +94,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
         addRequirement 'phantom-loader'
         addModLoader 'Fabric'
         addGameVersion minecraftVersion
+        addGameVersion '1.20.2'
     }
 }
 
@@ -104,7 +105,7 @@ modrinth {
     versionName = modName + ' - ' + modVersion + ' Fabric'
     versionType = 'release'
     uploadFile = remapJar
-    gameVersions = [minecraftVersion]
+    gameVersions = [minecraftVersion, '1.20.2']
     loaders = ['fabric']
     changelog = changelogText
     dependencies {

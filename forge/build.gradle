@@ -97,6 +97,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
         displayName = modName + ' - ' + modVersion + ' Forge'
         addRequirement 'phantom-loader'
         addGameVersion minecraftVersion
+        addGameVersion '1.20.2'
         addModLoader 'Forge'
     }
 }
@@ -108,7 +109,7 @@ modrinth {
     versionName = modName + ' - ' + modVersion + ' Forge'
     versionType = 'release'
     uploadFile = jar
-    gameVersions = [minecraftVersion]
+    gameVersions = [minecraftVersion, '1.20.2']
     loaders = ['forge']
     changelog = changelogText
     dependencies {
