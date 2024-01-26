@@ -33,7 +33,9 @@ public class SimpleChestFeature extends Feature<SimpleChestConfiguration> {
             RandomSource random = featurePlaceContext.random();
             BlockState chest = configuration.chest().getState(random, pos);
             world.setBlock(pos, chest, 2);
-            RandomizableContainerBlockEntity.setLootTable(world, random, pos, configuration.lootTable());
+            if(world.getBlockEntity(pos) instanceof RandomizableContainerBlockEntity blockEntity) {
+                blockEntity.setLootTable(configuration.lootTable(), random.nextLong());
+            }
             return true;
         }
         return false;
