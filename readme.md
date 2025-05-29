@@ -3,6 +3,12 @@
 
 Spider Caves is a mod that adds a spider cave biome and a spider armor.
 
+# This project has been moved
+
+**This mod is for Minecraft 1.19.4-1.20.3**
+
+**For versions from 1.21 onwards, see [Underground Worlds](https://codeberg.org/HexagonNico/UndergroundWorlds)**
+
 ## About
 
 Spider Caves adds an underground spider cave biome that can be recognized by the abundance of cobwebs and spider eggs.
